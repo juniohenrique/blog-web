@@ -1,27 +1,17 @@
 node {
     try {
         stage("Build") {
-            git 'git@github.com:qaninjahq/blog-api.git'
-            ruby('bundler install')
+            git 'git@github.com:qaninjahq/blog-web.git'
         }
-        stage("Development") {
-            env.RACK_ENV = 'development'
-            ruby("rspec -fd --format RspecJunitFormatter --out logs/unit_tests.xml")
-            junit 'logs/unit_tests.xml'
-        }
-            stage("Testing") {
+        stage("Testing") {
             sh "./deploy.sh testing"
-            env.RACK_ENV = 'testing'
-            ruby("rspec -fd --format RspecJunitFormatter --out logs/func_tests.xml")
-            junit 'logs/func_tests.xml'
         }
         stage("Production") {
-            sh "./deploy.sh prod"
+            
         }
     }
     catch (err) {
         currentBuild = 'Deu ruim no build :('
-        junit 'logs/*.xml'
         throw err
     }
 
