@@ -1,9 +1,0 @@
----
-default: -p testing
-dev: ENVIRONMENT=development --format progress -p json -p junit -p html
-testing: ENVIRONMENT=testing --format progress -p json -p junit -p html
-production: ENVIRONMENT=production --format progress
-json: --format json --out=logs/cucumber/features.json
-html: --format html --out=logs/cucumber/features.html
-junit: --format junit --out logs/junit
-allure: --format AllureCucumber::Formatter --out logs/allure

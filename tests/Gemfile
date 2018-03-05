@@ -1,10 +1,9 @@
-source 'http://rubygems.org'
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
 
 gem 'cucumber'
 gem 'capybara'
-gem 'rspec'
-gem 'selenium-webdriver'
-gem 'poltergeist'
 gem 'faker'
+gem 'rspec'
 gem 'site_prism'
-gem 'allure-cucumber', '0.5.8'
