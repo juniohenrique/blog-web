@@ -28,6 +28,7 @@ end
 Quando(/^faço o cadastro desse artigo$/) do
   @posts.add.click
   @posts.title.set @item[:title]
+  @posts.image.set @item[:image]
   @posts.description.set @item[:description]
   @posts.save.click
 end
