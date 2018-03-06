@@ -20,6 +20,7 @@ end
 Dado(/^que eu tenho um novo artigo$/) do
   @item = {
     title: Faker::Lorem.sentence,
+    image: Faker::Avatar.image,
     description: "#{TEST_ENV.upcase} - #{Faker::Lorem.paragraph}"
   }
 end
